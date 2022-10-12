@@ -1,6 +1,7 @@
 # blockchain-HW-1
 
 ## Task 1
+'''
 @@ -291,6 +291,8 @@ contract MultiSigWallet {
          notNull(destination)
          returns (uint transactionId)
@@ -10,8 +11,10 @@
          transactionId = transactionCount;
          transactions[transactionId] = Transaction({
              destination: destination,
+'''
 
 ## Task 2
+'''
 @@ -230,6 +230,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      ) internal virtual {
          require(from != address(0), "ERC20: transfer from the zero address");
@@ -19,9 +22,10 @@
 +        require((block.timestamp / 1 days + 3) % 7 != 5, "ERC20: can not transfer on Saturday");
 
          _beforeTokenTransfer(from, to, amount);
-
+'''
      
 ## Task 3
+'''
 @@ -18,7 +18,7 @@ contract DividendToken is StandardToken, Ownable {
      event PayDividend(address indexed to, uint256 amount);
      event HangingDividend(address indexed to, uint256 amount) ;
@@ -43,3 +47,4 @@
              m_totalDividends = m_totalDividends.add(msg.value);
          }
      }
+'''
